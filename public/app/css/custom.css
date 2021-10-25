@@ -1,0 +1,118 @@
+.logo {
+    width: 15rem;
+}
+
+.block-finder__form {
+    display: grid !important;
+    width: 400px !important;
+}
+
+.block-finder {
+    background: #000 !important;
+}
+
+.webootrix__cursor-pointer {
+    cursor: pointer;
+}
+
+.webootrix__indicator {
+    border: solid goldenrod;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    z-index: 10;
+    background-color: #fff;
+    left: 50%;
+    top: 194.5px;
+    padding: 5px;
+}
+.webootrix__subcategory .webootrix__link {
+    display: flex;
+    justify-content: start;
+    transition: 0.5s;
+}
+
+.webootrix__link:hover {
+    color: #1b65ea;
+    text-decoration: underline;
+}
+
+.webootrix__subcategory .webootrix__link img {
+    width: 40px;
+    transition: 0.5s;
+}
+
+.webootrix__link:hover img {
+    transform: scale(1.3);
+}
+
+.webootrix__subcategory__text {
+    padding-top: 10px;
+    margin-left: 5px;
+}
+
+.block-header__body {
+    margin-top: 20px;
+}
+
+#block-finder__form {
+    width: 105% !important;
+    margin-bottom: 25px;
+}
+
+#block-finder__form select {
+    border: 1px solid #999999ab;
+    border-radius: 5px;
+}
+
+#block-finder__form select:focus {
+    border: 1px solid #006847;
+}
+
+#block-finder__form button {
+    margin-top: 10px;
+}
+
+.loader {
+    border: 14px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 14px solid #3498db;
+    width: 16px;
+    height: 16px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+.loader.position-absolute {
+    top: 6px;
+    left: -40px;
+}
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-border {
+    width: 20px;
+    height: 20px;
+}
+
+.mamurjor_button_disable {
+    background-color: #545454;
+    color: #fff;
+}

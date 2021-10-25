@@ -1,0 +1,196 @@
+<template>
+    <app-layout>
+        <hero-section />
+        <bread-crumb :breads="breads" />
+
+        <div class="block-split block-split--has-sidebar">
+            <div class="container">
+                <div class="block-split__row row no-gutters">
+                    <products-filter />
+                    <div
+                        class="block-split__item block-split__item-content col-auto mt-5"
+                    >
+                        <div class="block">
+                            <div class="products-view">
+                                <div
+                                    class="products-view__list products-list products-list--grid--4"
+                                    data-layout="list"
+                                    data-with-features="false"
+                                >
+                                    <div class="products-list__head">
+                                        <div
+                                            class="products-list__column products-list__column--image"
+                                        >
+                                            Image
+                                        </div>
+                                        <div
+                                            class="products-list__column products-list__column--meta"
+                                        >
+                                            SKU
+                                        </div>
+                                        <div
+                                            class="products-list__column products-list__column--product"
+                                        >
+                                            Product
+                                        </div>
+                                        <div
+                                            class="products-list__column products-list__column--rating"
+                                        >
+                                            Rating
+                                        </div>
+                                        <div
+                                            class="products-list__column products-list__column--price"
+                                        >
+                                            Price
+                                        </div>
+                                    </div>
+                                    <div class="products-list__content">
+                                        <product-list
+                                            v-for="part in parts.data"
+                                            :key="part.id"
+                                            :part="part"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="products-view__pagination">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled">
+                                                <a
+                                                    class="page-link page-link--with-arrow"
+                                                    href=""
+                                                    aria-label="Previous"
+                                                >
+                                                    <span
+                                                        class="page-link__arrow page-link__arrow--left"
+                                                        aria-hidden="true"
+                                                        ><svg
+                                                            width="7"
+                                                            height="11"
+                                                        >
+                                                            <path
+                                                                d="M6.7,0.3L6.7,0.3c-0.4-0.4-0.9-0.4-1.3,0L0,5.5l5.4,5.2c0.4,0.4,0.9,0.3,1.3,0l0,0c0.4-0.4,0.4-1,0-1.3l-4-3.9l4-3.9C7.1,1.2,7.1,0.6,6.7,0.3z"
+                                                            />
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"
+                                                    >1</a
+                                                >
+                                            </li>
+                                            <li
+                                                class="page-item active"
+                                                aria-current="page"
+                                            >
+                                                <span class="page-link">
+                                                    2
+                                                    <span class="sr-only"
+                                                        >(current)</span
+                                                    >
+                                                </span>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"
+                                                    >3</a
+                                                >
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"
+                                                    >4</a
+                                                >
+                                            </li>
+                                            <li
+                                                class="page-item page-item--dots"
+                                            >
+                                                <div
+                                                    class="pagination__dots"
+                                                ></div>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"
+                                                    >9</a
+                                                >
+                                            </li>
+                                            <li class="page-item">
+                                                <a
+                                                    class="page-link page-link--with-arrow"
+                                                    href=""
+                                                    aria-label="Next"
+                                                >
+                                                    <span
+                                                        class="page-link__arrow page-link__arrow--right"
+                                                        aria-hidden="true"
+                                                        ><svg
+                                                            width="7"
+                                                            height="11"
+                                                        >
+                                                            <path
+                                                                d="M0.3,10.7L0.3,10.7c0.4,0.4,0.9,0.4,1.3,0L7,5.5L1.6,0.3C1.2-0.1,0.7,0,0.3,0.3l0,0c-0.4,0.4-0.4,1,0,1.3l4,3.9l-4,3.9
+	C-0.1,9.8-0.1,10.4,0.3,10.7z"
+                                                            />
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div
+                                        class="products-view__pagination-legend"
+                                    >
+                                        Showing 6 of 98 products
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="block-space block-space--layout--before-footer"
+                ></div>
+            </div>
+        </div>
+        <!-- site__body / end -->
+        <!-- site__body / end -->
+    </app-layout>
+</template>
+
+<script>
+import AppLayout from "@/Layouts/AppLayout";
+import BreadCrumb from "@/Components/App/BreadCrumb";
+import ProductsFilter from "@/Components/App/ProductsFilter";
+import ProductList from "@/Components/App/ProductList";
+
+export default {
+    props: ["parts"],
+    data() {
+        return {
+            breads: {
+                bread: {
+                    0: {
+                        url: "",
+                        label: "BMW"
+                    },
+                    1: {
+                        url: "",
+                        label: "1ER"
+                    },
+                    2: {
+                        url: "",
+                        label: "1 HATCHBACK (E87)"
+                    }
+                },
+                current: "single product"
+            }
+        };
+    },
+
+    components: {
+        AppLayout,
+        BreadCrumb,
+        ProductsFilter,
+        ProductList
+    }
+};
+</script>
